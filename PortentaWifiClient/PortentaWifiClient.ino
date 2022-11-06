@@ -65,9 +65,8 @@ void setup() {
     // Make a HTTP request:
     while (true) {
       client.println("C");
-      delay(3000);
-
-      if (client.available()) {
+      delay(100);
+      while (client.available()) {
         char c = client.read();             // read a byte, then
         Serial.write(c); 
       }
